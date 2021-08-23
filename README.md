@@ -134,3 +134,8 @@ Use `context.WithValue` to set and modify the value
 ctx := context.WithValue(context.Background(), keyID, rand.Int())
 ctx = context.WithValue(ctx, keyID, 14)
 ```
+
+## Do not
+
+1. Cancel context more than once.
+2. When you need to receive context cancel signal do not wrap it with `WithTimeout` or `WithCancel`.
